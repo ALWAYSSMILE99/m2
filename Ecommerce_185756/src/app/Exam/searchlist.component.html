@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+<h1>Search Form</h1>
+<input type="text" placeholder="" name="search" [(ngModel)]="searchProduct1">&nbsp;&nbsp;
+<input type="button" value="search" name="search" (click)="search()"/><br/><br/>
+<div class="container">
+<h3>Product List</h3>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+</thead>
+  <ng-container *ngIf="searchProduct2">
+      <!--ngFor is used as a for each loop and here it is used to get all products-->
+    <tr *ngFor="let p of resultProduct | searchpipe:searchProduct1">
+        <!--Interpolation is used to print the data which is provided inside it-->
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.category}}</td>
+    </tr>
+</ng-container>
+</table>
+</div>
+</html>
+ 
+

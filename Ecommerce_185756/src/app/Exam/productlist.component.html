@@ -1,0 +1,19 @@
+<div class="container">
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Option</th>
+    </tr>
+    <tr *ngFor="let p of product">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.category}}</td>
+       <!--(click)="delete(p)" :- When we click on delete button, the ts file delete method gets called. -->
+        <td><button class="btn btn-danger" varient="primary" (click)="remove(p)">Delete</button></td>
+    </tr>
+</table>
+</div>
